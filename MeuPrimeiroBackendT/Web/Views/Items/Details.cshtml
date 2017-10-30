@@ -11,14 +11,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model._TipoItem.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model._TipoItem.Nome)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
 
@@ -35,24 +27,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Raridade)
+            @Html.DisplayNameFor(model => model.Altura)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Raridade)
+            @Html.DisplayFor(model => model.Altura)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DanoMaximo)
+            @Html.DisplayNameFor(model => model.Dano)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DanoMaximo)
+            @Html.DisplayFor(model => model.Dano)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

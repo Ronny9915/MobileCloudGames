@@ -13,17 +13,17 @@ using Web.Models.Contexto;
 
 namespace Web.API
 {
-    public class ItensController : ApiController
+    public class ItemsController : ApiController
     {
         private MeuContexto db = new MeuContexto();
 
-        // GET: api/Itens
+        // GET: api/Items
         public IQueryable<Item> GetItems()
         {
             return db.Items;
         }
 
-        // GET: api/Itens/5
+        // GET: api/Items/5
         [ResponseType(typeof(Item))]
         public IHttpActionResult GetItem(int id)
         {
@@ -36,7 +36,7 @@ namespace Web.API
             return Ok(item);
         }
 
-        // PUT: api/Itens/5
+        // PUT: api/Items/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutItem(int id, Item item)
         {
@@ -45,7 +45,7 @@ namespace Web.API
                 return BadRequest(ModelState);
             }
 
-            if (id != item.ItemID)
+            if (id != item.CharID)
             {
                 return BadRequest();
             }
@@ -71,7 +71,7 @@ namespace Web.API
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Itens
+        // POST: api/Items
         [ResponseType(typeof(Item))]
         public IHttpActionResult PostItem(Item item)
         {
@@ -83,10 +83,10 @@ namespace Web.API
             db.Items.Add(item);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = item.ItemID }, item);
+            return CreatedAtRoute("DefaultApi", new { id = item.CharID }, item);
         }
 
-        // DELETE: api/Itens/5
+        // DELETE: api/Items/5
         [ResponseType(typeof(Item))]
         public IHttpActionResult DeleteItem(int id)
         {
@@ -113,7 +113,7 @@ namespace Web.API
 
         private bool ItemExists(int id)
         {
-            return db.Items.Count(e => e.ItemID == id) > 0;
+            return db.Items.Count(e => e.CharID == id) > 0;
         }
     }
 }
