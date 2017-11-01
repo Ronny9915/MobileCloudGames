@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class ApiClient : MonoBehaviour
 {
-    const string url = "http://localhost:50287/API/Itens/";
+    const string url = "http://localhost:50287/API/Items";
 
     // Use this for initialization
     void Start()
@@ -49,9 +49,11 @@ public class ApiClient : MonoBehaviour
     void ImprimirItem(Item i)
     {
         Debug.Log("====== Dados objeto ======= ");
-        Debug.Log("ID: " + i.ItemID);
+        Debug.Log("ID: " + i.CharID);
         Debug.Log("Nome: " + i.Nome);
         Debug.Log("Descrição: " + i.Descricao);
+        Debug.Log("Altura: " + i.Altura);
+        Debug.Log("Dano: " + i.Dano);
 
     }
 }
